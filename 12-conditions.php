@@ -17,6 +17,14 @@
     }else{
         echo "$nb est plus petit que 10";
     }
+    echo "<p>if(isset)</p>";
+
+    if(isset($nb) && $nb < 10 && $nb != 10){ //verifie si elle est initialisée
+        echo "$nb existe et il est plus petit que 10";
+    }else{
+        echo "$nb existe et il est plus grand que 10";
+    }
+
     ?>
     <p></p>
 </body>
