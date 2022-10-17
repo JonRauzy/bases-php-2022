@@ -5,7 +5,7 @@ var_dump($_POST);
 
 //si il existe la variable $_POST nommé temperature (utilisateur isset) dans notre cas $_POST['temperature'] existe si on a envoyé le formulaire
 
-if(isset($_POST['temperature'])){
+if (isset($_POST['temperature'])) {
     echo "bite";
 }
 
@@ -17,12 +17,14 @@ var_dump($temp);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Températures</title>
 </head>
+
 <body>
     <h1>Température</h1>
     <p>Pis y'a aussi les super global variable <a href="https://www.php.net/manual/en/language.variables.superglobals.php" target="_blank">check ici fiss</a> </p>
@@ -32,4 +34,5 @@ var_dump($temp);
         <input type="submit" value="Envoyer" style="width: 75px;">
     </form>
 </body>
+
 </html>

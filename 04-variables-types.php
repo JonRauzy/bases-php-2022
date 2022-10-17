@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les types de variables</title>
 </head>
+
 <body>
     <h1>Les types de variables</h1>
     <h2>Les string (text)</h2>
@@ -16,12 +18,12 @@
     $monTitre = "Bientôt la fin de ce cours interminable !";
 
     // affichage du contenu de la variable avec une chaîne concaténée (utilisation du . ou de la virgule) - gettype est une fonction permettant de récupérer le typage d'une variable (en PHP 8 on utilisera plutôt get_debug_type())
-    echo $monTitre." Yes! <br>";
-    echo "Le type de la variable est ".gettype($monTitre).' !';
+    echo $monTitre . " Yes! <br>";
+    echo "Le type de la variable est " . gettype($monTitre) . ' !';
     ?>
     <p>Il existe des centaines de fonctions pour gérer du texte, par exemple</p>
     <?php
-    echo 'mettre tout en majuscule : mb_strtoupper($monTitre) '.mb_strtoupper($monTitre);
+    echo 'mettre tout en majuscule : mb_strtoupper($monTitre) ' . mb_strtoupper($monTitre);
     ?>
     <p><a href="https://www.php.net/manual/fr/book.strings.php" target="_blank">string</a></p>
     <h2>Les numériques</h2>
@@ -33,7 +35,7 @@ $mySecondInt = - 7;</pre>
     <p>Les calculs de base se font avec les signes + - * /</p>
     <?php
     $myFirstInt = 22;
-    $mySecondInt = - 7;
+    $mySecondInt = -7;
 
     echo $myFirstInt;
     echo "<br>";
@@ -81,12 +83,13 @@ $mySecondInt = - 7;</pre>
     $nada = NULL;
     ?>
     <h2>Les type tableaux (array)</h2>
-    <p>Les tableaux permettent de contenir plusieures variables à l'intérieur d'une variable de type array. Ils sont multidimentionnels, càd on peut avoir autant de tableaux que nécessaire dans un tableau.</p><p>Il existe 2 types de tableaux : Les tableaux indexés, et les tableaux associatifs</p>
+    <p>Les tableaux permettent de contenir plusieures variables à l'intérieur d'une variable de type array. Ils sont multidimentionnels, càd on peut avoir autant de tableaux que nécessaire dans un tableau.</p>
+    <p>Il existe 2 types de tableaux : Les tableaux indexés, et les tableaux associatifs</p>
     <h3>Tableau indexé</h3>
     <p>Il ne contient que des valeurs, les clefs sont attribuées par PHP</p>
     <?php
     // création d'un tableau indexé
-    $tab1 = array(5,"Lulu","Dupuis",true);
+    $tab1 = array(5, "Lulu", "Dupuis", true);
     // débogage de tableaux ou objets avec print_r, moins complet que le var_dump
     print_r($tab1);
     // on veut afficher la 2eme clef:
@@ -96,13 +99,14 @@ $mySecondInt = - 7;</pre>
     <p>Tableau dont on a indiqué au moins 1 des clefs, ce qui en fait un tableau associatif</p>
     <?php
     // création d'un tableau associatif
-    $tab2 = array( "un"=>1,
-                   "deux"=>2,
-                   "trois"=>3,
-                   4 => "coucou", 
-                   "lala",
-                   array(1,2,3),
-                 );
+    $tab2 = array(
+        "un" => 1,
+        "deux" => 2,
+        "trois" => 3,
+        4 => "coucou",
+        "lala",
+        array(1, 2, 3),
+    );
     // débogage de tableaux ou objets avec print_r, moins complet que le var_dump
     print_r($tab2);
     echo $tab2["deux"];
@@ -110,9 +114,10 @@ $mySecondInt = - 7;</pre>
     <hr>
     <?php
     // outil de débogage le plus commun
-    var_dump($monTitre,$myFirstInt,$mySecondInt, $add, $sous, $multi,$div,$firstFloat,$secondFloat,$bool1,$bool2,$nada,$tab1,$tab2);
+    var_dump($monTitre, $myFirstInt, $mySecondInt, $add, $sous, $multi, $div, $firstFloat, $secondFloat, $bool1, $bool2, $nada, $tab1, $tab2);
 
     ?>
 
 </body>
+
 </html>
