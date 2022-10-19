@@ -11,9 +11,9 @@ if (isset($_POST['temperature']) && is_numeric($_POST['temperature'])) {
     $temp = (int)$_POST['temperature'];
     if ($temp < 0) {
         $reponse .= "il gèle";
-    }elseif($temp < 100) {
+    } elseif ($temp < 100) {
         $reponse .= "l'eau elle est liquide";
-    }else{
+    } else {
         $reponse .= "l'eau bout";
     }
     $reponse .= "<h3>";

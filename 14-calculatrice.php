@@ -56,7 +56,7 @@ if (isset($_POST['first'], $_POST['choix'], $_POST['second']) && is_numeric($_PO
     <?php
     var_dump($_POST);
     ?>
-    
+
 </body>
 
 </html>
