@@ -31,30 +31,38 @@ if (isset($_POST['first'], $_POST['choix'], $_POST['second']) && is_numeric($_PO
 </head>
 
 <body>
+    <style>
+        h1,
+        p,
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            margin: auto;
+        }
+    </style>
     <h1>Calculatrice</h1>
     <h2>Exercice calculatrice</h2>
-    <p>Créez une branche et un nouveau fichier dans 14-exe/14-calcul-{prénom}.php<br>
-        Envoyez-moi le git pull request sur notre dépôt de la classe</p>
-    <p>$reponse doit contenir la réponse au calcul, ou l'erreur de calcul ou de fonctionnement</p>
-    <form action="" name="calcul" method="POST">
-        <input type="text" name="first" />
-        <select name="choix">
-            <option value="addition">+</option>
-            <option value="soustraction">-</option>
-            <option value="multiplication">*</option>
-            <option value="division">/</option>
-        </select>
-        <input type="text" name="second" />
-        <input type="submit" value="Calculer" />
-    </form>
+    <p>Bienvenu dans la calculatrice, mets des chiffres, choisi un opérature et bim la réponse wesh t'es content?</p>
+    <div class="yo">
+        <form action="" name="calcul" method="POST">
+            <input type="text" name="first" />
+            <select name="choix">
+                <option value="addition">+</option>
+                <option value="soustraction">-</option>
+                <option value="multiplication">*</option>
+                <option value="division">/</option>
+            </select>
+            <input type="text" name="second" />
+            <input type="submit" value="Calculer" />
+        </form>
+    </div>
+
     <?php
     if (isset($reponse)) :
         echo $reponse;
     endif;
-    ?>
-    <hr>
-    <?php
-    var_dump($_POST);
     ?>
 
 </body>
