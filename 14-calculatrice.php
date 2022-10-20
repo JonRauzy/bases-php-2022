@@ -38,8 +38,14 @@ if (isset($_POST['first'], $_POST['choix'], $_POST['second']) && is_numeric($_PO
             text-align: center;
         }
 
-        form {
+        .yo {
+            width: 40%;
+            border: green dotted 6px;
             margin: auto;
+            padding: 12px;
+        }
+        form{
+            margin-left: 150px;
         }
     </style>
     <h1>Calculatrice</h1>
@@ -61,7 +67,7 @@ if (isset($_POST['first'], $_POST['choix'], $_POST['second']) && is_numeric($_PO
 
     <?php
     if (isset($reponse)) :
-        echo $reponse;
+        echo "<p>$reponse</p>";
     endif;
     ?>
 
