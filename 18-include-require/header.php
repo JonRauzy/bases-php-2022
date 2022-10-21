@@ -12,7 +12,7 @@
 <header>
     <h1 style="text-align:center;">Salut Bande De Batards</h1>
     <nav>
-        <a href="18-include-required.php">Accueil</a>
+        <a href="index.php">Accueil</a>
         <a href="equipe.php">Equipe</a>
         <a href="tarif.php">Tarif</a>
         <a href="contact.php">Contact</a>
