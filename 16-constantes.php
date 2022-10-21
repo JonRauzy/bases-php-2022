@@ -14,22 +14,36 @@
     <p>on met define, pis la valeur qu'on met dedans et on met tout en majuscule avec des underscore comme ça on les trouve facilement</p>
     <?php
 
-    define("UNE_CONSTANTE","la valeur de la constante ici, qui est une chaine de caractère"); // si je refais define("UNE_CONSTANTE") plus tard ça me fera un message d'erreur parce que je ne peux pas changer la valeure de la constante, comme son nom l'indique oui
+    define("UNE_CONSTANTE", "la valeur de la constante ici, qui est une chaine de caractère"); // si je refais define("UNE_CONSTANTE") plus tard ça me fera un message d'erreur parce que je ne peux pas changer la valeure de la constante, comme son nom l'indique oui
     echo UNE_CONSTANTE;
     echo "<br> UNE CONSTANTE ne sera pas interprété entre guillement double, même entre accolade";
     echo "il faudra utilisé la concatenation pour afficher " . UNE_CONSTANTE . " ! ";
 
     define("DB_HOST", "local host"); //exemple souvent oui
-    define("TABLEAU",['un',
-                    'deux',
-                    'trois',
-                    'quattre',]);
+    define("TABLEAU", [
+        'un',
+        'deux',
+        'trois',
+        'quattre',
+    ]);
 
 
     echo "<br>" . DB_HOST;
     // echo "<br>" . TABLEAU; // ça donne une erreur d'affichage, il faut appeler l'index du tableau si tu veux faire
     echo "<br>" . TABLEAU[0];
     // mais on évite les tableaux parce que y'a moyen de changer les valeurs du tableau quand même mais michael il a oublié comment lol, alors stou
+    ?>
+
+    <h4>constante Prédéfinis</h4>
+    <p>on peut écrire const CONSTANTE = valeur</p>
+    <?php
+
+    const CONSTANTE_2 = "valeur";
+    echo CONSTANTE_2;
+    //ça devient la norme et à partir de php8 tout est en majusucle et "_"
+    //dans un objet, const est déclaré en premier, pour pouvoir compiler, c'est obligatoire
+    const DB_PWD = "oui";
+
     ?>
 </body>
 
