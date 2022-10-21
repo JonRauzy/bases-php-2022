@@ -17,16 +17,13 @@
     </form>
 
     <?php
-    var_dump($_POST)
+    var_dump($_POST);
+    echo "<br>";
     ?>
-    <h2>MD5</h2>
-    <p>A ne pas utiliser</p>
-    <?php
-    var_dump($_POST)
-    ?>
-    
-    <?php
-    
+
+    <?php    
+    $pwdHash = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+    echo $pwdHash;
     ?>
 </body>
 
