@@ -16,7 +16,7 @@
         </div>
     </div>
     <!--Section: Contact v.2-->
-<section class="mb-4" style="width:80%; margin: auto;">
+<section style="width:80%; margin:auto;">
 
 <!--Section heading-->
 <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
@@ -72,7 +72,7 @@
     <!--Grid column-->
 
     <!--Grid column-->
-    <div class="col-md-3 text-center">
+    <div class="text-center"> 
         <ul class="list-unstyled mb-0">
             <li><i class="fas fa-map-marker-alt fa-2x"></i>
                 <p>San Francisco, CA 94126, USA</p>
