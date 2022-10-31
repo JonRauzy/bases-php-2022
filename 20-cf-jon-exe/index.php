@@ -1,6 +1,6 @@
 <?php
 
-include 'menu.php';
+
 
 require_once 'configuration.php';
 
@@ -23,4 +23,3 @@ if (isset($_GET['u'])) {
 }
 
 
-include 'footer.php';
