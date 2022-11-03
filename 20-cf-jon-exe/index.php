@@ -21,5 +21,3 @@ if (isset($_GET['u'])) {
 } else {
     include './pages/homepage.php';
 }
-
-

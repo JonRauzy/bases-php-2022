@@ -1,4 +1,4 @@
-<h1>Accueil 20</h1>
+<h1>INTERNET 20000</h1>
 <ul class="nav">
     <li><a href="./">Accueil 20</a>
     <li><a href="?u=formateurs">Formateurs WEB</a></li>
