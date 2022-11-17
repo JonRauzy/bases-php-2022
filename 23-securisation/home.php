@@ -8,10 +8,10 @@
 </head>
 <body>
     <h1>Maison</h1>
-    <?php
-    
-    echo chiffration(19,23,"+");
-    
-    ?>
+
+    <a href="?page=home">home</a>
+    <a href="?page=fonctions">fonctions</a>
+    <a href="?page=contact.php">contact</a>
+
 </body>
 </html>

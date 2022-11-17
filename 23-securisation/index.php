@@ -4,7 +4,12 @@
 
 require_once "config.php"; // appel des dépendances
 
-include 'fonctions.php';
-
-include 'home.php';
-
+if(isset($_GET['page'])){
+    if(in_array($_GET['page'],NOM_DE_PAGES)){   
+        include $_GET['page'].'.php';
+    }else{
+        include '404.php';
+    }
+}else{
+    include 'home.php';
+}

@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>fonctions</h1>
+    <h1>contact</h1>
     <a href="?page=home">home</a>
     <a href="?page=fonctions">fonctions</a>
     <a href="?page=contact.php">contact</a>
