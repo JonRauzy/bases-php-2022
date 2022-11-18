@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>404</title>
 </head>
 <body>
-    <h1>Maison</h1>
-    <?php include 'header.php'?>
+    <h1>t'es perdu 404</h1>
 </body>
 </html>
