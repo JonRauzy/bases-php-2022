@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>contact</h1>
     <?php include 'header.php'?>
+    <h1>contact</h1>
 </body>
 </html>
