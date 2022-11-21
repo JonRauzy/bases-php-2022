@@ -35,7 +35,7 @@ require_once 'config.php';
     }catch(Exception $e){
         echo utf8_encode($e->getMessage());
     }
-        var_dump($mysqliConnect);
+        
     ?>
    
 </body>
