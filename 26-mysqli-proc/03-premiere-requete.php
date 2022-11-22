@@ -1,12 +1,13 @@
 <?php
 require_once 'config.php';
+include 'fonction.php';
 
     // connexion à la DB mysql "statistique"
     try{
         //conexion
         $mysqliConnect = mysqli_connect(DB_HOST,DB_LOGIN, DB_PWD, DB_NAME, DB_PORT); 
         // on y dit quelle charset on veut (utf8)
-        mysqli_set_charset($mysqliConnect, CHARSET);
+        mysqli_set_charset($mysqliConnect, DB_CHARSET);
     }catch(Exception $e){
         echo utf8_encode($e->getMessage());
     }
@@ -52,7 +53,7 @@ require_once 'config.php';
             while($item = mysqli_fetch_assoc($query)) :
                 
         ?>
-            <h3><?= $item['nom'] ?>- <?= argent($item['population']) ?></h3>
+            <h3><?= $item['nom'] ?>- <?= perMillion($item['population']) ?></h3>
 
         <?php
         endwhile;
