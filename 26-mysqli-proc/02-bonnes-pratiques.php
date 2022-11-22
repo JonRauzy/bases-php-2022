@@ -31,7 +31,7 @@ require_once 'config.php';
         //conexion
         $mysqliConnect = mysqli_connect(DB_HOST,DB_LOGIN, DB_PWD, DB_NAME, DB_PORT); 
         // on y dit quelle charset on veut (utf8)
-        mysqli_set_charset($mysqliConnect, CHARSET);
+        mysqli_set_charset($mysqliConnect, DB_CHARSET);
     }catch(Exception $e){
         echo utf8_encode($e->getMessage());
     }
