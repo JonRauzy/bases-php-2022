@@ -52,7 +52,7 @@ require_once 'config.php';
             while($item = mysqli_fetch_assoc($query)) :
                 
         ?>
-            <h3><?= $item['nom'] ?>- <?= $item['population']?></h3>
+            <h3><?= $item['nom'] ?>- <?= argent($item['population']) ?></h3>
 
         <?php
         endwhile;

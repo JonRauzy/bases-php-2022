@@ -5,5 +5,3 @@ function argent(int $nb) : string {
     $resultat = number_format($nb/1000000, 2, ',', ' ') . "millions";
     return (string)$resultat;
 }
-
-echo argent(2333444);
