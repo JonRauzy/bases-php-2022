@@ -39,7 +39,7 @@ include 'fonction.php';
     <h1>Première requete</h1>
     <p>
         <?php
-        echo $nbPays; // afficher la requête
+        echo "<h1>Nombre de pays : $nbPays</h1>"; // afficher la requête
         // tant qu'on a des pays à lister et si on a au moins un pays
         if(empty($nbPays)) : // pas de pays
         ?>
