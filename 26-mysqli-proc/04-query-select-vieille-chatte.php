@@ -9,7 +9,7 @@ try{
     exit(utf8_encode($e->getMessage()));
 }
 
-$sql = "SELECT * FROM statistiques ORDER BY nom AsC";
+$sql = "SELECT * FROM statistiques ORDER BY nom ASC";
 
 ?>
 
