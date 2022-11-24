@@ -2,20 +2,21 @@
 require_once 'config.php';
 include 'fonction.php';
 
-// connexion à la DB mysql "statistique"
+
 try {
-    //conexion
+
     $mysqliConnect = mysqli_connect(DB_HOST, DB_LOGIN, DB_PWD, DB_NAME, DB_PORT);
-    // on y dit quelle charset on veut (utf8)
     mysqli_set_charset($mysqliConnect, DB_CHARSET);
+
 } catch (Exception $e) {
     echo utf8_encode($e->getMessage());
+    
 }
 
 // creation d'un variable en string dans lequel on met la requête SQL
 $sql = "SELECT * FROM statistiques ORDER BY `nom` ASC;";
 
-//execution de la requete avec mysqli_query() en cas d'échec on arrête le script avec die() mais en vrai on tuilise trycatch stou
+// //execution de la requete avec mysqli_query() en cas d'échec on arrête le script avec die() mais en vrai on tuilise trycatch stou
 $query = mysqli_query($mysqliConnect, $sql) or die("erreur numéro" . mysqli_errno($mysqliConnect) .  " lors de la requête: " . " " . mysqli_error($mysqliConnect));
 
 // on verifie combien de resultats on a obtenu avec notre select

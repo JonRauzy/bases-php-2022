@@ -1,15 +1,22 @@
 <?php
 require_once 'config.php';
+require 'fonction.php';
 
 try {
+
     $db = mysqli_connect(DB_HOST, DB_LOGIN, DB_PWD, DB_NAME, DB_PORT);
     mysqli_set_charset($db, DB_CHARSET);
 } catch (Exception $e) {
 
-    exit(utf8_encode($e->getMessage()));
+
+    echo utf8_encode($e->getMessage());
 }
 
-$sql = "SELECT * FROM statistiques ORDER BY nom ASC";
+$sql = "SELECT * FROM statistiques ORDER BY `nom` ASC";
+
+$requete = mysqli_query($db,$sql);
+
+$nbPays = mysqli_num_rows($requete);
 
 ?>
 
@@ -24,10 +31,17 @@ $sql = "SELECT * FROM statistiques ORDER BY nom ASC";
 </head>
 
 <body>
-    <h1>suce pipi</h1>
-
+    <h1>yanis</h1>
     <?php
-    mysqli_close($db)
+    if(isset($nbPays)):   
+        while ($item = mysqli_fetch_assoc($requete)) : 
+        ?>
+            <p><?= $item['nom']?> - <?= perMillion($item['population']) ?></p>
+        <?php
+
+    endwhile;
+endif;
+
     ?>
 </body>
 
