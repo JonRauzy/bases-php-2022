@@ -1,7 +1,7 @@
 <?php
 require_once "config.php";
 
-require "functions.php";
+require "fonction.php";
 
 // connexion avec try catch
 
@@ -44,7 +44,8 @@ if(empty($nb)){
 
 }else{
     // mettre les résultats dans une variable de type tableau pour faire un foreach dans la vue
-    $datas = mysqli_fetch_all($query,MYSQLI_ASSOC);
+    // le MYSQL_ASSOC est un flag (constante numérique) qui transforme le résultat en tableau associatif
+    $datas = mysqli_fetch_all($query, MYSQLI_ASSOC);
 }
 
 // bonnes pratiques on va vider les résultats
@@ -65,12 +66,12 @@ mysqli_close($db);
     <h1>Accueil</h1>
     <h2>Nombre de pays : <?=$nb?></h2>
     <?php
-    if(isset($affiche)): 
+    if(isset($affiche)): // si pas de pays
     ?>
     <h3><?=$affiche?></h3>
     <?php
     else:
-        foreach($datas as $fifa):
+        foreach($datas as $fifa): // à steur on met dans un tableau associatif nommé $fifa et il va sur chaque occurence du tableau pour afficher le résultats lignes pas lignes
     ?>
     <p><strong><?=$fifa['nom']?></strong> <?=perMillion($fifa['population'])?> d' Habitants</p>
     <?php
