@@ -34,6 +34,7 @@ if (isset($_POST['temperature']) && is_numeric($_POST['temperature'])) {
 
 <body>
     <h1>Température</h1>
+
     <p>Pis y'a aussi les super global variable <a href="https://www.php.net/manual/en/language.variables.superglobals.php" target="_blank">check ici fiss</a> </p>
     <form name="formulaire" action="" method="POST">
         <p>Bonjour qu'elle est la température du dehors</p>
