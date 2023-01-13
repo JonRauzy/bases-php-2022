@@ -28,12 +28,34 @@ $query_article = mysqli_query($db, $sql_article);
 $resultat_article = mysqli_fetch_all($query_article, MYSQLI_ASSOC);
 
 
-$sql_3 = "SELECT a.idarticles, a.art_title, SUBSTR(a.art_text, 1, 240) AS art_text, a.art_date, u.user_login, u.idusers 
-        FROM `articles` a
-        LEFT JOIN users u
-        ON u.idusers = a.users_idusers";
-$query_3 = mysqli_query($db, $sql_3);
-$resultat_3 = mysqli_fetch_all($query_3, MYSQLI_ASSOC);
+$sql_4 = "SELECT a.idarticles, a.art_title, SUBSTR(a.art_text, 1, 111) AS art_text, a.art_date, u.user_login, u.idusers, r.* 
+        FROM `articles` a   
+        INNER JOIN users u
+        ON u.idusers = a.users_idusers
+        LEFT JOIN articles_has_rubriques ahr
+        ON ahr.articles_idarticles = a.idarticles
+        LEFT JOIN  rubriques r
+        ON ahr.rubriques_idrubriques = r.idrubriques";
+$query_4 = mysqli_query($db, $sql_4) or die('erreur');
+$resultat_4 = mysqli_fetch_all($query_4, MYSQLI_ASSOC);
 
 
-var_dump($resultat_3);
+// on veut tout récupérer mais afficher qu'un article à chaque fois
+$sql_5 = "SELECT a.idarticles, a.art_title, 
+        SUBSTR(a.art_text, 1, 111) AS rt_text, 
+        a.art_date, u.user_login, u.idusers, r.idrubriques, 
+        GROUP_CONCAT(r.idrubriques) AS idrubriques,
+        GROUP_CONCAT(r.rub_title SEPARATOR '|||') AS rub_title
+        FROM `articles` a   
+        INNER JOIN users u
+        ON u.idusers = a.users_idusers
+        LEFT JOIN articles_has_rubriques ahr
+        ON ahr.articles_idarticles = a.idarticles
+        LEFT JOIN  rubriques r
+        ON ahr.rubriques_idrubriques = r.idrubriques
+        GROUP BY a.idarticles
+        ";
+
+$query_5 = mysqli_query($db, $sql_5) or die('erreur');
+$resultat_5 = mysqli_fetch_all($query_5, MYSQLI_ASSOC);
+var_dump($resultat_5); 
