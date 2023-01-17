@@ -9,3 +9,22 @@
 
 ## Structure
 
+### controleur frontale : 
+
+        /public/index.php
+
+dans `public` se trouveront :
+
+-index.php
+-les dossiers visibles pour l'utilisateur 
+(front-end) : `.css`, `img`, `js`
+
+### les vues (view) :
+
+        /view/404view.php
+        /view/detailView.php
+        /homepageView.php
+
+Elles se trouvent dans un dossier non accéssible pour les utilisateur,
+Ce sont les controleurs, via le controleur frontale qui les appellera.
+
