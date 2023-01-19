@@ -62,4 +62,17 @@ if(!isset($_GET['section']) && !isset($_GET['article']) && !isset($_GET['auteur'
             // on appel l'erreur 404
             include_once '../view/404View.php';
             }
+        }
+
+
+
+if(isset($_POST['art_title'],$_POST['art_text'])){
+    $title = htmlspecialchars(strip_tags((trim($_POST['art_title']))),ENT_QUOTES);
+    $text = htmlspecialchars(strip_tags((trim($_POST['art_title']))),ENT_QUOTES);
+
+    if(!empty($titre) && !empty($text)){
+        $sql = "INSERT INTO articles (art_title,art_text) VALUES ('$title', '$text');";
+        mysqli_connect($db, $sql) or die (mysqli_error($db));
+        header("location: ./");
+    }
 }
