@@ -8,18 +8,9 @@
 </head>
 <body>
     <h1>Page d'accueil de tous nos articles</h1>
-    <nav class="inline-block;">
-        <a href="./">Accueil</a>
-        <?php
-        foreach($resultatRubriques AS $item):
-        ?>
-        <a href="?section=<?=$item['idrubriques']?>"><?=$item['rub_title']?></a>
-        <?php
-        endforeach;
-        ?>
-    </nav>
-    
-    <?php
+
+    <?php include 'include/menu.php'; 
+
     // pas d'articles
     if(empty($resultatArticles)):
     ?>

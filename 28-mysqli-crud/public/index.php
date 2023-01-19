@@ -1,6 +1,5 @@
 <?php
 
-
 /*
 
 chargement des dépendances
