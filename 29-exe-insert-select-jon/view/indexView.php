@@ -17,9 +17,9 @@
         ?>
             <h2><?= "Il n'y pas d'adresses dans la base de données" ?></h2>
         <?php elseif ($nbAdresses == 1) : ?>
-            <h3><?= "il y a $nbAdresses adresse dans la base de données" ?></h3><br>";
+            <h3><?="il y a $nbAdresses adresse dans la base de données"; ?></h3><br>
         <?php else : ?>
-            <h3><?= "il y a $nbAdresses adresses dans la base de données" ?></h3><br>";
+            <h3><?="il y a $nbAdresses adresses dans la base de données"; ?></h3><br>
         <?php endif; ?>
 
         <?php
