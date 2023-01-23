@@ -26,3 +26,4 @@ Bonus 2: ne pas afficher le nom mais sa première lettre en majuscule (même si 
         P. michaël *****el.j.pitz@gmail.com
 
 Bonus 3 : un peu de design ;-)
+
