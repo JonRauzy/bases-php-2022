@@ -1,8 +1,3 @@
-<?php
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +8,6 @@
     <link rel="stylesheet" href="../public/style.css">
 </head>
 <body>
-    <?php 
-    // var_dump(); 
-    ?>
+    
 </body>
 </html>
