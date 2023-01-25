@@ -20,13 +20,13 @@
             <h3><?="il y a $nbAdresses adresse dans la base de données"; ?></h3><br>
         <?php else : ?>
             <h3><?="il y a $nbAdresses adresses dans la base de données"; ?></h3><br>
-        <?php endif; ?>
+        <?php endif ?>
 
         <?php
         foreach ($resultatAdresses as $adresse) :
         ?>
             <div class="afficheMail">
-                <h3><?= $adresse['nomadresses'] ?> : </h3>
+                <h3><?= $adresse['nomadresses'] ?></h3>
                 <p><?= $adresse['mailadresses'] ?></p>
             </div>
 
@@ -40,6 +40,8 @@
             <input type="mail" name="mailadresses" placeholder="donne ton adresse mail">
             <input type="submit">
         </form>
+
+        <script src="js.js"></script>
     </div>
 </body>
 
