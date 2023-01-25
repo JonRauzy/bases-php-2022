@@ -10,6 +10,8 @@ try{
     exit(mb_convert_encoding($e->getMessage(), 'UTF-8', 'ISO-8859-1'));
 }
 
+$message = "";
+
 // connexion sql à la table et tout
 $sqlAdresses = "SELECT `nomadresses`, `mailadresses` 
                 FROM `adresses` 
@@ -24,7 +26,19 @@ if (isset($_POST['nomadresses']) && isset($_POST['mailadresses'])) {
     $mail = $_POST['mailadresses'];
     $sqlInsert = "INSERT INTO `adresses`(`nomadresses`, `mailadresses`) 
                 VALUES ('$nom','$mail');";
-    mysqli_query($dbExo, $sqlInsert) or die(mysqli_error($dbExo));
+
+    try{
+        mysqli_query($dbExo, $sqlInsert);
+        $message = "Vous êtes bien inscrit!";
+
+    }catch(Exception $e){
+        echo $e->getCode();
+        if($e->getCode()==1046){
+            $message = "Un champ est trop long";
+        }elseif($e->getCode()==1062){
+            $message = "vous êtes déjà inscrit avec ce mail";
+        }
+    }
     header("location: ./");
 }
 

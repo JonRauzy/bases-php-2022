@@ -39,12 +39,17 @@
         <form action="../public/index.php" method="POST">
             <input type="text" name="nomadresses" placeholder="donne ton nom">
             <input type="mail" name="mailadresses" placeholder="donne ton adresse mail">
-            <h3>Remplis le captcha : </h3>
+            <button>send</button>
+
+            <!-- <h3>Remplis le captcha : </h3>
             <p id="captchaOutput"></p>
             <span id="error"><p >AFOU</p></span>
             <input type="text" placeholder="met le captcha là" id="captchaInput">
+
             <button type="button" id="captchaValidate">Valider</button>
-            <button type="button" id="refresh">Refresh</button>
+            <button type="button" id="refresh">Refresh</button> -->
+
+            <p><?= $message ?></p>
         </form>
         <script src="../public/js.js"></script>
     </div>
