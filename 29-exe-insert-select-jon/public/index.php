@@ -30,4 +30,5 @@ if (isset($_POST['nomadresses']) && isset($_POST['mailadresses'])) {
 
 include_once '../view/indexView.php';
 
+mysqli_free_result($queryAdresses);
 mysqli_close($dbExo);

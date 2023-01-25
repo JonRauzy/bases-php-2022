@@ -13,35 +13,40 @@
     <h1>Les adresses mails persos à tout le monde (hyper safe oui)</h1>
     <div class="container">
         <?php
-        if (empty($nbAdresses)) :
+        if (empty($nbAdresses)):
         ?>
             <h2><?= "Il n'y pas d'adresses dans la base de données" ?></h2>
-        <?php elseif ($nbAdresses == 1) : ?>
-            <h3><?="il y a $nbAdresses adresse dans la base de données"; ?></h3><br>
         <?php else : ?>
-            <h3><?="il y a $nbAdresses adresses dans la base de données"; ?></h3><br>
-        <?php endif ?>
+            <?php if ($nbAdresses == 1) : ?>
+                <h3><?= "il y a " . $nbAdresses . "adresse dans la base de données"; ?></h3><br>
+            <?php else : ?>
+                <h3><?= "il y a " . $nbAdresses . " adresses dans la base de données"; ?></h3><br>
+            <?php endif; ?>
+            <?php
+            foreach ($resultatAdresses as $adresse) :
+            ?>
+                <div class="afficheMail">
+                    <h3><?= $adresse['nomadresses'] ?></h3>
+                    <p><?= $adresse['mailadresses'] ?></p>
+                </div>
 
         <?php
-        foreach ($resultatAdresses as $adresse) :
-        ?>
-            <div class="afficheMail">
-                <h3><?= $adresse['nomadresses'] ?></h3>
-                <p><?= $adresse['mailadresses'] ?></p>
-            </div>
-
-        <?php
-        endforeach;
+            endforeach;
+        endif;
         ?>
 
 
         <form action="../public/index.php" method="POST">
             <input type="text" name="nomadresses" placeholder="donne ton nom">
             <input type="mail" name="mailadresses" placeholder="donne ton adresse mail">
-            <input type="submit">
+            <h3>Remplis le captcha : </h3>
+            <p id="captchaOutput"></p>
+            <span id="error"><p >AFOU</p></span>
+            <input type="text" placeholder="met le captcha là" id="captchaInput">
+            <button type="button" id="captchaValidate">Valider</button>
+            <button type="button" id="refresh">Refresh</button>
         </form>
-
-        <script src="js.js"></script>
+        <script src="../public/js.js"></script>
     </div>
 </body>
 
