@@ -22,14 +22,10 @@ function supremeYannick(callback, min = 6, max = 6) {
 		for (let i = 0; i < capcap.length; i++) {
 			//couleur random:
 			let colorsRandom = randRGB();
-
-			//taille font random:
-			let size = randSize(50, 100);
-
 			//affichage du texte (avec les attributs randomisé):
 			capOut.insertAdjacentHTML(
 				"beforeend",
-				`<span style="color:rgb(${colorsRandom[0]},${colorsRandom[1]},${colorsRandom[2]});font-size:${size}em;">${capcap[i]}</span>`
+				`<span style="color:rgb(${colorsRandom[0]},${colorsRandom[1]},${colorsRandom[2]});>${capcap[i]}</span>`
 			);
 		}
 	}
@@ -55,11 +51,6 @@ function supremeYannick(callback, min = 6, max = 6) {
 			arrayRGB.push(randomInt(20, 230));
 		}
 		return arrayRGB;
-	}
-
-	//choisir taille random
-	function randSize(randMin = 10, randMax = 10) {
-		return randomInt(randMin, randMax) / 10;
 	}
 
 	const alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9"]

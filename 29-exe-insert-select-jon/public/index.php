@@ -28,7 +28,7 @@ if (isset($_POST['nomadresses']) && isset($_POST['mailadresses'])) {
                 VALUES ('$nom','$mail');";
 
     try{
-        mysqli_query($dbExo, $sqlInsert);
+        mysqli_query($dbExo, $sqlInsert); 
         $message = "Vous êtes bien inscrit!";
 
     }catch(Exception $e){

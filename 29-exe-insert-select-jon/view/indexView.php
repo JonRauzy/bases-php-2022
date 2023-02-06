@@ -12,47 +12,45 @@
 <body>
     <h1>Les adresses mails persos à tout le monde (hyper safe oui)</h1>
     <div class="container">
+        <div class="adresse">
         <?php
-        if (empty($nbAdresses)):
+        if (empty($nbAdresses)) :
         ?>
-            <h2><?= "Il n'y pas d'adresses dans la base de données" ?></h2>
+            <h3><?= "Il n'y pas d'adresses dans la base de données" ?></h3>
         <?php else : ?>
             <?php if ($nbAdresses == 1) : ?>
-                <h3><?= "il y a " . $nbAdresses . "adresse dans la base de données"; ?></h3><br>
+                <h3><?= "il y a " . $nbAdresses . " adresse dans la base de données :"; ?></h3><br>
             <?php else : ?>
-                <h3><?= "il y a " . $nbAdresses . " adresses dans la base de données"; ?></h3><br>
+                <h3><?= "il y a " . $nbAdresses . " adresses dans la base de données :"; ?></h3><br>
             <?php endif; ?>
             <?php
             foreach ($resultatAdresses as $adresse) :
             ?>
                 <div class="afficheMail">
-                    <h3><?= $adresse['nomadresses'] ?></h3>
+                    <h4><?= "- " . $adresse['nomadresses'] . " : "?></h4>
                     <p><?= $adresse['mailadresses'] ?></p>
                 </div>
-
         <?php
             endforeach;
         endif;
         ?>
+        </div>
 
 
         <form action="../public/index.php" method="POST">
+            <h2 id="titForm">Donne ton nom et ton mail fils : </h2>
             <input type="text" name="nomadresses" placeholder="donne ton nom">
             <input type="mail" name="mailadresses" placeholder="donne ton adresse mail">
-            <button>send</button>
-
-            <!-- <h3>Remplis le captcha : </h3>
+            <h3 id="titCap">Remplis le captcha : </h3>
             <p id="captchaOutput"></p>
-            <span id="error"><p >AFOU</p></span>
+            <span id="error"><p>AFOU</p></span>
             <input type="text" placeholder="met le captcha là" id="captchaInput">
-
             <button type="button" id="captchaValidate">Valider</button>
-            <button type="button" id="refresh">Refresh</button> -->
-
+            <button type="button" id="refresh">Refresh</button>
             <p><?= $message ?></p>
         </form>
-        <script src="../public/js.js"></script>
     </div>
+    <script src="../public/js.js"></script>
 </body>
 
 </html>
