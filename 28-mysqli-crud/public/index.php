@@ -40,7 +40,6 @@ Router
 // si on est sur la page d'accueil
 // si il n'existe pas de variable get nommée section ou de variable get nommée article ou de variable get nommée auteur
 if(!isset($_GET['section']) && !isset($_GET['article']) && !isset($_GET['auteur'])){
-
     
     include_once '../controller/homepageController.php';
 
