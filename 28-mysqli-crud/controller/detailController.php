@@ -1,18 +1,18 @@
 <?php
 
- // transformation en variable locale
- $idArticle = (int) $_GET['article'];
+// transformation en variable locale
+$idArticle = (int) $_GET['article'];
 
- // requête pour le menu des rubriques
- $sql = "SELECT idrubriques, rub_title FROM rubriques
+// requête pour le menu des rubriques
+$sql = "SELECT idrubriques, rub_title FROM rubriques
  # WHERE idrubriques = 20
   ORDER BY rub_title ASC;";
- // exécution de la requête
- $query = mysqli_query($db,$sql) or die('Erreur de $query');
- // transformation en tableau indexé contenant des tableaux associatifs
- $resultatRubriques = mysqli_fetch_all($query, MYSQLI_ASSOC);
+// exécution de la requête
+$query = mysqli_query($db, $sql) or die('Erreur de $query');
+// transformation en tableau indexé contenant des tableaux associatifs
+$resultatRubriques = mysqli_fetch_all($query, MYSQLI_ASSOC);
 
- $sql="SELECT a.idarticles, a.art_title, a.art_text, a.art_date,
+$sql = "SELECT a.idarticles, a.art_title, a.art_text, a.art_date,
      u.user_login, u.idusers,  # Le login et mot de passe de l'auteur (u est l'alias de user voir près de INNER JOIN)
 
      GROUP_CONCAT(r.idrubriques) AS idrubriques, # on concatène les id, la virgule est le séparateur par défaut, on crée un alias de sortie
@@ -36,11 +36,9 @@
      ORDER BY a.art_date DESC";
 
 
- // exécution de la requête
- $query = mysqli_query($db,$sql) or die('Erreur de $query');
- // nombre d'articles récupérés
- $nbArticles = mysqli_num_rows($query);
- // transformation en tableau indexé contenant des tableaux associatifs
- $resultatArticles = mysqli_fetch_assoc($query);
-
- 
+// exécution de la requête
+$query = mysqli_query($db, $sql) or die('Erreur de $query');
+// nombre d'articles récupérés
+$nbArticles = mysqli_num_rows($query);
+// transformation en tableau indexé contenant des tableaux associatifs
+$resultatArticles = mysqli_fetch_assoc($query);
