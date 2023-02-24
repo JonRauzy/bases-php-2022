@@ -27,14 +27,3 @@ if (isset($_SESSION['monId']) && $_SESSION['monId'] === session_id()) {
 
 }
 
-// exemple de verification du mot de passe : 
-// $mdp = "lulu27";
-
-// echo $mdpcrypt = password_hash($mdp, PASSWORD_DEFAULT);
-
-
-// if(password_verify($mdp, $mdpcrypt)){
-//     echo "<br>c'est bon";
-// }else{
-//     echo "<br>c'est pas bon";
-// }
