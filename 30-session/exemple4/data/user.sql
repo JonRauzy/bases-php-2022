@@ -3,23 +3,21 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3307
--- Généré le : jeu. 23 fév. 2023 à 14:59
--- Version du serveur : 10.6.5-MariaDB
--- Version de PHP : 8.1.0
+-- Généré le : ven. 24 fév. 2023 à 11:43
+-- Version du serveur : 10.10.2-MariaDB
+-- Version de PHP : 8.2.0
 
+SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
 --
 -- Base de données : `exe4session`
 --
+DROP DATABASE IF EXISTS `exe4session`;
+CREATE DATABASE IF NOT EXISTS `exe4session` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `exe4session`;
 
 -- --------------------------------------------------------
 
@@ -29,21 +27,23 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
-  `userid` int(255) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) NOT NULL,
-  `pwd` varchar(255) NOT NULL,
-  `createtime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `email` varchar(255) NOT NULL,
-  `uniqueid` varchar(65) NOT NULL,
-  `actif` tinyint(2) UNSIGNED NOT NULL DEFAULT 0,
-  PRIMARY KEY (`userid`),
-  UNIQUE KEY `uniqueid` (`uniqueid`),
-  UNIQUE KEY `username` (`username`) USING HASH,
-  UNIQUE KEY `pwd` (`pwd`) USING HASH,
-  UNIQUE KEY `email` (`email`) USING HASH
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
-COMMIT;
+                                      `iduser` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+                                      `username` varchar(16) NOT NULL,
+                                      `email` varchar(255) DEFAULT NULL,
+                                      `password` varchar(255) NOT NULL,
+                                      `create_time` timestamp NULL DEFAULT current_timestamp(),
+                                      `uniqid` varchar(64) NOT NULL,
+                                      `actif` tinyint(3) UNSIGNED DEFAULT 0,
+                                      PRIMARY KEY (`iduser`),
+                                      UNIQUE KEY `username_UNIQUE` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+--
+-- Déchargement des données de la table `user`
+--
+
+INSERT INTO `user` (`iduser`, `username`, `email`, `password`, `create_time`, `uniqid`, `actif`) VALUES
+                                                                                                     (1, 'Mike', 'michael@cf2m.be', '$2y$10$Ci/budSnG6e9XGx/dVPsMujtl.dMVsJo8Sm1RMcJh4pVqNEDAZbDO', '2023-02-24 11:36:16', 'cf63f8a0c05c1250.08872603', 1),
+                                                                                                     (2, 'Andre', 'andre@cf2m.be', '$2y$10$e5z7yzTYfsynL8H3p5/Y0.KIOpXpvlCYuU0fuwLPi0JV/K2zxcyCW', '2023-02-24 11:43:17', 'cf63f8a14f5f4767.06543540', 1);
+SET FOREIGN_KEY_CHECKS=1;
+COMMIT;
