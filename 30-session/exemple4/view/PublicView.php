@@ -12,12 +12,10 @@ var_dump($_SESSION);
 </head>
 <body>
     <h1>bienvenu sur le site du cul ta mère</h1>   
-    <?php if(isset($erreur)){
-        echo $erreur;
-    } ?>
+    <?= $erreur ?>
     <form action="./" method="POST">
         <input type="text" placeholder="login" name="username" required>
-        <input type="password" placeholder="password" name="pwd" required>
+        <input type="password" placeholder="password" name="password" required>
         <input type="submit" id="submit" value="ENTER">
     </form>  
 

@@ -21,10 +21,10 @@ function connectUser(mysqli $myDB, string $userLogin, string $userPassword):stri
 
     $recup = mysqli_fetch_assoc($query);
 
-    if (password_verify($userPassword, $recup['pwd'])){
+    if (password_verify($userPassword, $recup['password'])){
 
         $_SESSION = $recup;
-        unset($_SESSION['pwd'], $_SESSION['uniqueid']);
+        unset($_SESSION['password'], $_SESSION['uniqueid']);
         return true;
          
     }else{

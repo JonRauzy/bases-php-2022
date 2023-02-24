@@ -1,11 +1,11 @@
 <?php
 
-if (isset($_POST['username'], $_POST['pwd'])) {
+if (isset($_POST['username'], $_POST['password'])) {
 
     $username = htmlspecialchars(strip_tags(trim($_POST['username'])), ENT_QUOTES);
-    $pwd = htmlspecialchars(strip_tags(trim($_POST['pwd'])), ENT_QUOTES);
-    +
-        $isconnect = connectUser($db, $username, $pwd);
+    $password = htmlspecialchars(strip_tags(trim($_POST['password'])), ENT_QUOTES);
+    
+        $isconnect = connectUser($db, $username, $password);
 
     if (is_string($isconnect)) {
         $erreur = $isconnect;
