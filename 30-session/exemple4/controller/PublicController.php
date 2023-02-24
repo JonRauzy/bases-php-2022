@@ -13,6 +13,7 @@ if (isset($_POST['username'], $_POST['pwd'])) {
 
     if ($isconnect == true) {
         header("location: ./");
+        exit();
     }
 }
 
