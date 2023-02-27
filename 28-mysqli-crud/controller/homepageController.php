@@ -2,7 +2,7 @@
 
 // requête qui récupère tous articles avec 255 caractères de texte avec l'auteur cliquable et les rubriques cliquables pour notre page d'accueil
 
-    $sql="SELECT a.idarticles, a.art_title, # selection de l'id de l'article et de son titre (a est l'alias de articles, voir près du FROM)
+$sql = "SELECT a.idarticles, a.art_title, # selection de l'id de l'article et de son titre (a est l'alias de articles, voir près du FROM)
         SUBSTR(a.art_text,1,250) AS art_text, # on coupe le texte de l'article pour n'en garder que 250 caractères (! 256 car décimal vers octal) et on crée un alias de sortie avec AS pour pouvoir gérer le tableau associatif dans un autre langage (PHP)
         a.art_date,  # la date de l'article
         u.user_login, u.idusers,  # Le login et mot de passe de l'auteur (u est l'alias de user voir près de INNER JOIN)
@@ -35,23 +35,20 @@
         ORDER BY a.art_date DESC";
 
 
-    // exécution de la requête
-    $query = mysqli_query($db,$sql) or die('Erreur de $query');
-    // nombre d'articles récupérés
-    $nbArticles = mysqli_num_rows($query);
-    // transformation en tableau indexé contenant des tableaux associatifs
-    $resultatArticles = mysqli_fetch_all($query, MYSQLI_ASSOC);
+// exécution de la requête
+$query = mysqli_query($db, $sql) or die('Erreur de $query');
+// nombre d'articles récupérés
+$nbArticles = mysqli_num_rows($query);
+// transformation en tableau indexé contenant des tableaux associatifs
+$resultatArticles = mysqli_fetch_all($query, MYSQLI_ASSOC);
 
-    // requête pour le menu des rubriques
-    $sql = "SELECT idrubriques, rub_title FROM rubriques
+// requête pour le menu des rubriques
+$sql = "SELECT idrubriques, rub_title FROM rubriques
         # WHERE idrubriques = 20
          ORDER BY rub_title ASC;";
-        // exécution de la requête
-    $query = mysqli_query($db,$sql) or die('Erreur de $query');
-    // transformation en tableau indexé contenant des tableaux associatifs
-    $resultatRubriques = mysqli_fetch_all($query, MYSQLI_ASSOC);
+// exécution de la requête
+$query = mysqli_query($db, $sql) or die('Erreur de $query');
+// transformation en tableau indexé contenant des tableaux associatifs
+$resultatRubriques = mysqli_fetch_all($query, MYSQLI_ASSOC);
     
     #var_dump($resultatRubriques);
-
-
-    
