@@ -42,9 +42,6 @@ function connectUser(mysqli $myDB, string $uname, string $upwd): string|bool {
     }else{
         return "Login ou mot de passe incorrecte";
     }
-    
-    
-
 }
 
 // déconnexion d'un user
